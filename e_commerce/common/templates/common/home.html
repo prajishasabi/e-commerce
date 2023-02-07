@@ -1,0 +1,20 @@
+{% extends 'common/master.html' %}
+{% load static%}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2 my-auto text-center">
+            <a href="{% url  'common:customer_login' %}">
+            <button class="btn btn-info" id="customer" >Customer</button></a>
+        </div>
+        <div class="col-8">
+            <img src="{% static 'images/best.jpg' %}" class="img-fluid border-rounded mt-5"  height="600px">
+        </div>
+        <div class="col-2 my-auto text-center">
+            <a href="{% url  'common:seller_login' %}">
+            <button class="btn btn-info" id="seller" >Seller</button>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
