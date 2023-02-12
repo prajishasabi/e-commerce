@@ -45,3 +45,12 @@ def approve_seller(request):
             
 
     return render(request,'siteadmin/approve_seller.html',{'sellers_list':sellers})
+
+
+def view_seller(request):
+    sellers = Seller.objects.filter(status = 'approved') 
+    return render(request,'siteadmin/view_seller.html',{'sellers_list':sellers})
+
+
+def view_customer(request):
+    return render(request,'siteadmin/view_customer.html')
