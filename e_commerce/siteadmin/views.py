@@ -18,11 +18,15 @@ def approve_seller(request):
 
         if 'approve' in request.POST:
             # logic when approve button clicked
-           
-            seller.status = 'approved' # sql update query
-            seller.save()
             user_name = randint(1111,9999)
             password = 'sel-' + str(user_name) + str(seller.phone)[5:]
+
+           
+            seller.status = 'approved' # sql update query
+            seller.user_name = user_name
+            seller.password = password
+            seller.save()
+            
             mail_subject = "Account Approval"
             message_body = "Hi your account has been approved by Admin,you can now login with username " + str(user_name) + " and temporary password " + password 
 

@@ -1,10 +1,16 @@
 from django.shortcuts import render
+from common.models import Seller
 
 
 # Create your views here.
 
 def home(request):
-    return render(request,'seller/seller_home.html')
+    # seller = Seller.objects.get(id = request.session['seller'])
+    seller = Seller.objects.filter(id = request.session['seller']).values('seller_name','pic')
+    seller_name = seller[0]['seller_name']
+    seller_pic = seller[0]['pic']
+    print(seller_pic)
+    return render(request,'seller/seller_home.html',{'name':seller_name,'pic': seller_pic})
 
 
 def catalog(request):
@@ -12,6 +18,18 @@ def catalog(request):
 
 
 def add_product(request):
+    if request.method == 'POST':
+        product_name = request.POST['product_name']
+        description = request.POST['description']
+        stock = request.POST['stock']
+        price = request.POST['price']
+        image = request.FILES['image']
+
+        
+
+       
+
+    return render(request,'common/customerregist.html')
     return render(request,'seller/add_products.html')
 
 

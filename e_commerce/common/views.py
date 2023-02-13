@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Customer
 from .models import Seller
 
@@ -27,9 +27,22 @@ def custregistration(request):
     return render(request,'common/customerregist.html')
 
 def sellerlogin(request):
-    return render(request,'common/sellerlogin.html')
+    msg = ''
+    if request.method =='POST':
+        username = request.POST['username']
+        password = request.POST['password']
+    
+        try:
+            seller = Seller.objects.get(user_name = username,password = password)
+            request.session['seller'] = seller.id
+            return redirect('seller:index')
+        except Exception as e:
+            msg = 'username or password incorrect'
+
+    return render(request,'common/sellerlogin.html',{'message':msg})
 
 def sellerregistration(request):
+    msg = ''
     if request.method == 'POST':
         sname = request.POST['seller_name']
         email = request.POST['email']
@@ -43,10 +56,14 @@ def sellerregistration(request):
         acc_number = request.POST['acc_number']
         image = request.FILES['image']
 
-        seller = Seller(seller_name = sname,email = email, address = address, phone = phone, gender = gender, company_name = company_name, holder_name = holder_name, ifsc = ifsc , branch = branch, account_number = acc_number, pic = image)
+        seller = Seller(seller_name = sname,email = email, address = address, 
+                        phone = phone, gender = gender, company_name = company_name, 
+                        holder_name = holder_name, ifsc = ifsc , branch = branch, account_number = acc_number,
+                          pic = image)
         seller.save()
+        msg = 'You have registered successfully'
 
 
 
-    return render(request,'common/sellerregist.html')
+    return render(request,'common/sellerregist.html',{'message':msg})
 
