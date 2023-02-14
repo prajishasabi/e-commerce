@@ -9,13 +9,18 @@ def home(request):
 
 def custlogin(request):
     msg = ""
+
+
     if request.method =='POST':
+
         email = request.POST['email']
         password = request.POST['password']
-    
+        # request.session['customer'] = customer.id
+
+
+
         try:
             customer = Customer.objects.get(email = email,password = password)
-            request.session['seller'] = customer.id
             return redirect('customer:index')
         except Exception as e:
             msg = 'email or password incorrect'
@@ -24,6 +29,7 @@ def custlogin(request):
 
 
 def custregistration(request):
+    msg = ''
     if request.method == 'POST':
         cname = request.POST['custmer_name']
         email = request.POST['email']
@@ -31,13 +37,18 @@ def custregistration(request):
         phone = request.POST['phone']
         gender = request.POST['gender']
         password = request.POST['password']
+        email_exist = Customer.objects.filter(email = email).exists()
+
+        if not email_exist:
 
 
-        customer = Customer(customer_name = cname,email = email, address = address, phone = phone, gender = gender, password = password)
-        customer.save()
+            customer = Customer(customer_name = cname,email = email, address = address, phone = phone, gender = gender, password = password)
+            customer.save()
+        else:
+            msg = 'Email already Used! try with another valid email'
+            
 
-
-    return render(request,'common/customerregist.html')
+    return render(request,'common/customerregist.html',{'message':msg})
 
 def sellerlogin(request):
     msg = ''

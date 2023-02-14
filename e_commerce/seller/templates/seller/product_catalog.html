@@ -1,62 +1,23 @@
 {% extends 'seller/seller_master.html' %}
 {% load static%}
 {% block content %}
-{% comment %} <div class="row pt-4 align-items-center gy-4 style="margin-left:20px">
-  <div class="col-lg-3 col-md-6 col-sm-12 mx-sm-auto">
-      <div class="card " style="width: 16rem;">
-      <img class="card-img-top" src="{% static '/image/cat3.webp' %}" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Orelia</h5>
-        <p class="card-text text-warning">Rs. 299</p>
 
-        <a href="#" class="btn btn-dark">Add to Cart</a>
-      </div>
-    </div>
-  </div> 
-  <div class="col-lg-3 col-md-6 col-sm-12">
-      <div class="card mx-sm-auto" style="width: 16rem;">
-      <img class="card-img-top" src="{% static '/images/cat1.webp' %}" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Rangriti</h5>
-        <p class="card-text text-warning">Rs. 349</p>
+ 
 
-        <a href="#" class="btn btn-dark">Add to Cart</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-3 col-md-6 col-sm-12">
-      <div class="card" style="width: 16rem;">
-      <img class="card-img-top" src="{% static '/images/cat2.webp' %}" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title"> blossom</h5>
-        <p class="card-text text-warning">Rs. 499</p>
-        <a href="#" class="btn btn-dark">Add to Cart</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-3 col-md-6 col-sm-12">
-      <div class="card" style="width: 16rem;">
-      <img class="card-img-top" src="{% static '/images/cat1.webp' %}" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Vismay</h5>
-        <p class="card-text text-warning">Rs. 549</p>
-        <a href="#" class="btn btn-dark">Add to Cart</a>
-      </div>
-    </div>
-  </div> {% endcomment %}
-{% comment %} </div> {% endcomment %}
 <div class="container-fluid" style="margin-left:5%">
   <div class="row">
   {% comment %} <div class="row pt-4 align-items-center gy-4 style="margin-left:20px"> {% endcomment %}
     {% comment %} <div class="col-lg-3 col-md-6 col-sm-12 mx-sm-auto"> {% endcomment %}
-    <div class="col-md-3">
+    
+ {% for product in products %}
+      <div class="col-md-3">
         <a href="#">
           <div class="card ml-5 mt-5 " style="width:16rem; height:400px">
             <div class="card-body">
-              <img src="{% static 'images/cat1.webp' %}" style="width:100px" class="img-fluid" >
-                <h6 class="card-title text-center">V neck printed multi-slit A-line kurta S</h6>
+              <img src="{{product.pic.url}}" style="width:100px" class="img-fluid" >
+                <h6 class="card-title text-center">{{product.product_name}}</h6>
 
-                    <p class="card-text">Rs.690</p>
+                    <p class="card-text">{{product.price}}</p>
                         worldofek<br>
                         free delivery
     
@@ -64,41 +25,10 @@
             </div>
           </div>
         </a>
-    </div>
-<div class="col-md-3">
-  <a href ="#">
+    </div> 
+{% endfor %}
 
-    <div class="card ml-5 mt-5 " style="width:16rem; height:400px">
-      <div class="card-body">
-          <img src="{% static 'images/cat2.webp' %}" style="width:100px" class="img-fluid" >
-          <h6 class="card-title text-center">Abstract printed multi-slit A-line kurta S</h6>
 
-          <p class="card-text">Rs.690</p>
-          worldofek<br>
-          free delivery
-          <br>
-      
-      </div>
-    </div>
-  </a>
-</div>
-<div class="col-md-3">
-  <a href ="#">
-
-    <div class="card ml-5 mt-5 " style="width:16rem; height:400px">
-      <div class="card-body">
-          <img src="{% static 'images/cat3.webp' %}" style="width:120px" class="img-fluid" >
-          <h6 class="card-title text-center">Cotton woven knee length  Kurta, L</h6>
-
-          <p class="card-text">Rs.759</p>
-             worldofek<br>
-            free delivery
-            <br>
-      
-      </div>
-    </div>
-  </a>
-</div>
 </div>
 </div> 
 

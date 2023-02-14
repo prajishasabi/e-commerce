@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,8 +52,8 @@
                 <td>{{ seller.ifsc }}</td>
                 <td>{{ seller.account_number }}</td>
 
-                {% if seller.image == 'static/images/defaulimage.png' %}
-
+                {% if seller.pic == 'static/images/defaulimage.png' %}
+                iiii
                 <td><img src="{% static 'images/defaulimage.png' %}" height="100px" alt=""></td>
                 {% else %}
                 <td><img src="{{ seller.pic.url }}" height="100px" alt=""></td> 

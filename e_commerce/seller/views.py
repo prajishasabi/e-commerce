@@ -15,7 +15,9 @@ def home(request):
 
 
 def catalog(request):
-    return render(request,'seller/product_catalog.html')
+    products = Product.objects.filter(seller = request.session['seller'])
+
+    return render(request,'seller/product_catalog.html',{'products':products})
 
 
 def add_product(request):
