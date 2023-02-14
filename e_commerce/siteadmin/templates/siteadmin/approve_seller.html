@@ -13,7 +13,6 @@
         <thead>
             <tr>
                 <th scope ="col">SNo</th>
-                <th scope ="col">Seller pic</th>
                 <th scope ="col">Name</th>
                 <th scope ="col">Email</th>
                 <th scope ="col">Phone</th>
@@ -24,6 +23,8 @@
                 <th scope ="col">IFSC</th>
                 <th scope ="col">Account Number</th>
                 <th scope ='col'>Action </th>
+                <th scope ="col">Seller pic</th>
+
                 
                 
 
@@ -33,8 +34,9 @@
                 {% csrf_token %}
             <tr>
                
+                
                 <td> {{ forloop.counter }} </td> {# for serial number #}
-                <td><img src="{{ seller.pic.url }}" height="100px" alt=""></td>
+                <!-- <td><img src="{{ seller.pic.url }}" height="100px" alt=""></td> -->
                 <td>{{ seller.seller_name }}</td>{# seller-variable in foor loop #}
                 <td>{{ seller.email }}</td>
                 <td>{{ seller.phone }}</td>
@@ -48,6 +50,14 @@
 
                 <td>{{ seller.ifsc }}</td>
                 <td>{{ seller.account_number }}</td>
+
+                {% if seller.image == 'static/images/defaulimage.png' %}
+
+                <td><img src="{% static 'images/defaulimage.png' %}" height="100px" alt=""></td>
+                {% else %}
+                <td><img src="{{ seller.pic.url }}" height="100px" alt=""></td> 
+                {% endif %}
+
                 <td><button class ="btn btn-success" type='submit' name='approve'>Approve</button></td>
                 <td><button  class ="btn btn-danger" type ='submit' name= 'reject'>Reject</button></td>
                 <td><input type="hidden" name="seller_id" value ={{seller.id}} id=""></td>

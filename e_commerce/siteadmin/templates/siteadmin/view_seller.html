@@ -34,7 +34,7 @@
             <tr>
                
                 <td> {{ forloop.counter }} </td> {# for serial number #}
-                <td><img src="{{ seller.pic.url }}" height="100px" alt=""></td>
+                {% comment %} <td><img src="{{ seller.pic.url }}" height="100px" alt=""></td>  {% endcomment %}
                 <td>{{ seller.seller_name }}</td>{# seller-variable in foor loop #}
                 <td>{{ seller.email }}</td>
                 <td>{{ seller.phone }}</td>
@@ -48,6 +48,13 @@
 
                 <td>{{ seller.ifsc }}</td>
                 <td>{{ seller.account_number }}</td>
+                {% if seller.image == 'static/images/defaulimage.png'%}
+                <td><img src="{% static 'static/images/defaulimage.png'}" height="100px" alt=""></td>
+                {% else %}
+                <td><img src="{{ seller.pic.url }}" height="100px" alt=""></td> 
+                {% endif %}
+
+
                 {% comment %} <td><button class ="btn btn-success" type='submit' name='approve'>Approve</button></td>
                 <td><button  class ="btn btn-danger" type ='submit' name= 'reject'>Reject</button></td>
                 <td><input type="hidden" name="seller_id" value ={{seller.id}} id=""></td>

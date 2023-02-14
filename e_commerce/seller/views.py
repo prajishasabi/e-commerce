@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from common.models import Seller
+from  .models import Product
 
 
 # Create your views here.
@@ -18,19 +19,31 @@ def catalog(request):
 
 
 def add_product(request):
+    msg  = ''
     if request.method == 'POST':
         product_name = request.POST['product_name']
+        product_code = request.POST['product_code']
         description = request.POST['description']
         stock = request.POST['stock']
         price = request.POST['price']
         image = request.FILES['image']
 
+        product_exist = Product.objects.filter(code = product_code,seller = request.session['seller']).exists()
+
+        if not product_exist:
+            product = Product(product_name = product_name,code = product_code,description = description, stock = stock, 
+                            price = price,pic = image, seller_id = request.session['seller'])
+            product.save()
+
+        else:
+            msg = 'product code already added'
+
+
         
 
        
 
-    return render(request,'common/customerregist.html')
-    return render(request,'seller/add_products.html')
+    return render(request,'seller/add_products.html',{'message':msg})
 
 
 def change_password(request):

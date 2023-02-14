@@ -8,7 +8,20 @@ def home(request):
     return render(request,'common/home.html')
 
 def custlogin(request):
-    return render(request,'common/customerlogin.html')
+    msg = ""
+    if request.method =='POST':
+        email = request.POST['email']
+        password = request.POST['password']
+    
+        try:
+            customer = Customer.objects.get(email = email,password = password)
+            request.session['seller'] = customer.id
+            return redirect('customer:index')
+        except Exception as e:
+            msg = 'email or password incorrect'
+
+    return render(request,'common/customerlogin.html',{'message':msg})
+
 
 def custregistration(request):
     if request.method == 'POST':
@@ -54,12 +67,19 @@ def sellerregistration(request):
         ifsc = request.POST['ifsc']
         branch = request.POST['branch']
         acc_number = request.POST['acc_number']
-        image = request.FILES['image']
+        # image = request.FILES['image']
 
-        seller = Seller(seller_name = sname,email = email, address = address, 
+        if 'image' in request.FILES:
+            image = request.FILES['image']
+            seller = Seller(seller_name = sname,email = email, address = address, 
                         phone = phone, gender = gender, company_name = company_name, 
                         holder_name = holder_name, ifsc = ifsc , branch = branch, account_number = acc_number,
-                          pic = image)
+                        pic = image)
+        else:
+             seller = Seller(seller_name = sname,email = email, address = address, 
+                        phone = phone, gender = gender, company_name = company_name, 
+                        holder_name = holder_name, ifsc = ifsc , branch = branch, account_number = acc_number,
+                        )
         seller.save()
         msg = 'You have registered successfully'
 

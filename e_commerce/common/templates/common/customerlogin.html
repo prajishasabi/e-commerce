@@ -15,19 +15,21 @@
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
 
-                <form>
+                <form  method="POST">
+                  {% csrf_token %}
+                  
 
 
                   <!-- to error: add class "has-danger" -->
                   <div class="form-group">
                     <label for="InputEmail1">Email address</label>
                     <input type="email" class="form-control form-control-sm mt-3" id="InputEmail1"
-                      aria-describedby="emailHelp">
+                      aria-describedby="emailHelp" name="email">
                   </div>
                   <div class="form-group">
                     <label for="InputPassword1">Password</label>
                     <a href="#" style="float:right;font-size:12px;">Forgot password?</a>
-                    <input type="password" class="form-control form-control-sm mt-3" id="InputPassword1">
+                    <input type="password"  name ="password" class="form-control form-control-sm mt-3" id="InputPassword1">
                   </div>
                   <button type="submit" class="btn btn-primary btn-block mt-5">Sign in</button>
 

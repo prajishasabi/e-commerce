@@ -27,7 +27,7 @@ class Seller(models.Model):
     ifsc = models.CharField(max_length = 50)
     branch = models.CharField(max_length = 50)
     account_number = models.BigIntegerField()
-    pic = models.ImageField(upload_to = 'seller/' )
+    pic = models.ImageField(upload_to = 'seller/' ,default='static/images/defaulimage.png')
     status = models.CharField(max_length = 20, default = 'pending')
 
     class Meta:
