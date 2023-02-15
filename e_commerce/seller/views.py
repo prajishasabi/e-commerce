@@ -1,3 +1,4 @@
+
 from django.shortcuts import render
 from common.models import Seller
 from  .models import Product
@@ -49,7 +50,33 @@ def add_product(request):
 
 
 def change_password(request):
-    return render(request,'seller/change_password.html')
+    error_msg = ''
+    success_msg = '' 
+    if request.method == 'POST':
+        old_password = request.POST['old_password']
+        new_password = request.POST['new_password']
+        confirm_password = request.POST['confirm_password']
+        if new_password == confirm_password:
+            if len(new_password) >= 8:
+                seller = Seller.objects.get(id = request.session['seller'])
+                if seller.password == old_password:
+                    seller.password = new_password
+                    seller.save()
+                    success_msg = 'Password changed successfully'
+                else:
+                    error_msg = 'Incorrect password'
+
+            else:
+                error_msg = 'Password should be 8 characters long'
+        else:
+            error_msg = 'Password doesn\'t match'
+
+    
+            
+
+
+
+    return render(request,'seller/change_password.html',{'error_msg':error_msg,'success_msg':success_msg})
 
 
 

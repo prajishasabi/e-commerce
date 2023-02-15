@@ -11,17 +11,54 @@
         <th scope="col">SI No</th>
         <th scope="col">ProductImage</th>
         <th scope="col">ProductName</th>
+        <th scope="col">Price</th>
+
         <th scope="col">Quantity</th>
         <th scope="col">TotalPrice</th>
 
-        <th scope="col">Action</th>
 
       </tr>
     </thead>
+    <tbody>
+      {% for product in cart %}
+      <tr>
+        <td>{{forloop.counter}}</td>
+        <td><img src="{{product.product.pic.url}}" height="100px"></td>
+        <td>{{product.product.product_name}}</td>
+        <td>{{product.product.price}}</td>
+        <td><input type ="number" min =1 value="1" max="{{product.product.stock}}" item-id = {{product.product.id}} item-price = {{product.product.price}}></td>
+        <td><span id="span{{product.product.id}}"></span> </td>
+
+      </tr>
+
+      {% endfor %}
+    </tbody>
 
 </table>
 </div>
 
 </div>
+<script>
+
+  $('input').change(function(){
+
+  price = $(this).attr('item-price')
+  qty = $(this).val()
+  id =  $(this).attr('item-id')
+
+  total_price = parseInt(price) * parseInt(qty)
+
+  // console.log(total_price)
+  // $('#span').text=total_price
+  selected_span_id = 'span' + id
+  console.log(total_price)
+
+  document.getElementById(selected_span_id).innerHTML = total_price
+
+  })
+
+ 
+</script>
+
 
 {% endblock%}

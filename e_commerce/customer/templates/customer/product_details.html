@@ -1,0 +1,41 @@
+{% extends 'customer/master.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container-fluid p-5">
+    <div class="row">
+    {% comment %} <div class="row pt-4 align-items-center gy-4" style=margin-left:20px"> {% endcomment %}
+      {% comment %} <div class="col-lg-3 col-md-6 col-sm-12 mx-sm-auto"> {% endcomment %}
+      
+        <div class="col-lg-6 col-sm-12 mx-auto">
+        <img src="{{product.pic.url}}" style="width:500px;height:300px" class="img-fluid" >
+        </div>
+      <div class="col-lg-6 col-sm-12 mx-auto">
+        <form  method="POST">
+          {% csrf_token %}
+       <div class="card " style="width:16rem; height:300px">
+              <div class="card-body">
+                  <h6 class="card-title">Product Name:{{product.product_name}}</h6>
+                  <p>Description:{{product.description}}/p>
+                  <p class="card-text">Price:RS {{product.price}}</p>
+                  <p>Stock:{{product.stock}}</p>
+                  <p>Seller Name:{{product.seller.seller_name}}</p>
+                  <button  id="add_cart">Add Cart</button>
+                  {{message}}
+                          
+    
+              </div>
+          </div>
+        </form>
+        
+        
+      </div>
+ 
+ 
+  
+
+  </div> 
+</div>
+  
+  
+      {% endblock %}
