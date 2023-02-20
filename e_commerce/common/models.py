@@ -11,8 +11,8 @@ class Customer(models.Model):
     password = models.CharField(max_length = 20,default ='')
     status = models.CharField(max_length = 20, default = 'active')
 
-    class Meta:
-        db_table = 'customer'
+    
+    
 
 class Seller(models.Model):
     seller_name = models.CharField(max_length = 20)

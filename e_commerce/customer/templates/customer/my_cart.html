@@ -18,6 +18,7 @@
 
 
       </tr>
+      
     </thead>
     <tbody>
       {% for product in cart %}
@@ -30,8 +31,16 @@
         <td><span id="span{{product.product.id}}"></span> </td>
 
       </tr>
+      
 
       {% endfor %}
+      <tr>
+       
+
+        <td>Grand Total</td>
+        
+        <td> <span id ="grand_total"></td>
+      </tr>
     </tbody>
 
 </table>
@@ -41,7 +50,8 @@
 <script>
 
   $('input').change(function(){
-
+  grand_total = 0
+  count = 0
   price = $(this).attr('item-price')
   qty = $(this).val()
   id =  $(this).attr('item-id')
@@ -51,9 +61,17 @@
   // console.log(total_price)
   // $('#span').text=total_price
   selected_span_id = 'span' + id
-  console.log(total_price)
+  // console.log(total_price)
+  total =  document.getElementById(selected_span_id)
+  total.innerHTML = total_price
+for(i=0;i<2;i++){
+  grand_total =  total_price+grand_total
+}
+console.log(grand_total)
+    document.getElementById('grand_total').innerHTML=grand_total
 
-  document.getElementById(selected_span_id).innerHTML = total_price
+
+
 
   })
 
@@ -61,4 +79,4 @@
 </script>
 
 
-{% endblock%}
+{% endblock%} 
