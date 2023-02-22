@@ -1,6 +1,17 @@
 {% extends 'customer/master.html' %}
 {% load static %}
 {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+ <body onload="getGrandTotal()"> 
+  
+
 <div class="container-fluid">
     <div class="row"style="padding-top:10px;background-color:light">
         <h2 class="text-center" style="color:purple">My Cart!!!</h2>
@@ -28,8 +39,8 @@
         <td>{{product.product.product_name}}</td>
         <td>{{product.product.price}}</td>
         <td><input type ="number" min =1 value="1" max="{{product.product.stock}}" item-id = {{product.product.id}} item-price = {{product.product.price}}></td>
-        <td><span id="span{{product.product.id}}"></span> </td>
-
+        <td><span id="span{{product.product.id}}" class="total">{% widthratio product.product.price 1 1 %}  </span> </td>
+        <td><a href="{% url 'customer:remove_cart' product.id %}"  class ="btn btn-danger" id="remove">Remove</a></td>
       </tr>
       
 
@@ -48,6 +59,16 @@
 
 </div>
 <script>
+   function getGrandTotal(){
+    var grand_total = 0;
+    items = document.getElementsByClassName('total')
+    for(let i = 0; i<items.length;i++){
+      grand_total = grand_total + Number(items[i].innerHTML)
+    }
+    console.log(grand_total)
+
+
+   }
 
   $('input').change(function(){
   grand_total = 0
@@ -58,17 +79,14 @@
 
   total_price = parseInt(price) * parseInt(qty)
 
-  // console.log(total_price)
-  // $('#span').text=total_price
+  
   selected_span_id = 'span' + id
+  
   // console.log(total_price)
   total =  document.getElementById(selected_span_id)
   total.innerHTML = total_price
-for(i=0;i<2;i++){
-  grand_total =  total_price+grand_total
-}
-console.log(grand_total)
-    document.getElementById('grand_total').innerHTML=grand_total
+  getGrandTotal()
+
 
 
 
@@ -80,3 +98,5 @@ console.log(grand_total)
 
 
 {% endblock%} 
+</body>
+</html>

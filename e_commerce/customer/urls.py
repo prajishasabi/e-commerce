@@ -8,7 +8,9 @@ urlpatterns=[
     path('changepassword',views.change_password,name='change_password'),
     path('product/<int:pid>',views.products,name='products'),
     path('profile',views.profile,name='profile'),
-    path('logout',views.logout,name='logout')
+    path('logout',views.logout,name='logout'),
+    path('cart/remove/<int:c_id>',views.remove_cart,name='remove_cart')
+
 
 
 

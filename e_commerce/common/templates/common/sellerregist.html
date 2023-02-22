@@ -24,9 +24,45 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="Inputemail">Email</label>
-                                        <input type="text" name="email" class="form-control form-control-sm mt-3"
-                                            id="Inputemail">
+                                        <input type="text" name="email"   class="form-control form-control-sm mt-3"
+                                            id="email">
+                                    
+                                    <span id ='checkemail'></span>
                                     </div>
+                                    <script>
+                                        $('#email').change(function(){
+
+                                          $.ajaxSetup({
+                                            headers:{
+                                                "X-CSRFToken":$('[name=csrfmiddlewaretoken]').val()
+                                            }
+                                          })  
+                                        $.ajax({
+                                            type:'POST',
+                                            url:"{% url 'common:check_email' %}",
+                                            data:{
+                                                'email':$(this).val()
+                                            },
+                                            success:function(response){
+                                                if (response.email_exist == true){
+                                                    $('#checkemail').html('email already registered').css("color","red")
+                                                    $('#submit').prop('disabled',true)
+                                                }
+                                                else{
+                                                    $('#checkemail').html('email available').css("color","green")
+                                                    $('#submit').prop('disabled',false)
+                                            
+                                                    
+                                                }
+                                                
+                                                console.log(response.email_exist)
+                                            }
+                            
+
+
+                                        })
+                                    })
+                                    </script>
                                     <div class="form-group">
                                         <label for="Inputaddress">Address</label>
                                         <textarea class="form-control form-control-sm mt-3" name="address" id="Inputaddress"></textarea>
@@ -79,7 +115,7 @@
                                     
 
                                     
-                                    <button type="submit" class="btn btn-primary btn-block mt-5 text-center">Submit</button>
+                                    <button type="submit"  id ="submit" class="btn btn-primary btn-block mt-5 text-center">Submit</button>
 
                                    
                                 </form>

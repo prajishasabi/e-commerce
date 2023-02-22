@@ -1,5 +1,5 @@
 
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from common.models import Seller
 from  .models import Product
 
@@ -95,6 +95,11 @@ def order_history(request):
 def profile(request):
     return render(request,'seller/profile.html')
 
+
+def logout(request):
+    del request.session['seller']
+    request.session.flush()
+    return redirect('common:index')
 
 
 

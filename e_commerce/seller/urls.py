@@ -9,7 +9,8 @@ urlpatterns=[
     path('updatestock',views.update_stock,name='update_stock'),
     path('recentorder',views.recent_order,name='recent_order'),
     path('orderhistory',views.order_history,name='order_history'),
-    path('profile',views.profile,name='profile')
+    path('profile',views.profile,name='profile'),
+    path('logout',views.logout,name='logout')
 
 
 

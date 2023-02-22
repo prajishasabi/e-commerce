@@ -2,15 +2,15 @@ from django.shortcuts import render,redirect
 from customer.models import Cart
 from  seller.models import Product
 from common.models import Customer
-
+from .decorators import auth_customer
 # Create your views here.
 
-
+@auth_customer
 def home(request):
     products = Product.objects.all()
     return render(request,'customer/home.html',{'products':products})
 
-
+@auth_customer
 def my_cart(request):
     cart = Cart.objects.filter(customer = request.session['customer'])
 
@@ -22,7 +22,9 @@ def my_order(request):
     return render(request,'customer/my_order.html')
 
 
+@auth_customer
 def change_password(request):
+    
     error_msg = ''
     success_msg = '' 
     if request.method == 'POST':
@@ -80,9 +82,19 @@ def products(request,pid):
 def profile(request):
     return render(request,'customer/profile.html')
 
-
+@auth_customer
 def logout(request):
-    return render(request,'customer/logout.html')
+    del request.session['customer']
+    request.session.flush()
+    return redirect('common:index')
+
+def remove_cart(request,c_id):
+    cart_item = Cart.objects.get(id = c_id)
+    cart_item.delete()
+    return redirect ('customer:my_cart')
+
+
+
 
 
 

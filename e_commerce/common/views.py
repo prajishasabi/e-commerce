@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import Customer
 from .models import Seller
+from django.http import JsonResponse
 
 # Create your views here.
 
@@ -24,6 +25,7 @@ def custlogin(request):
             
             return redirect('customer:index')
         except Exception as e:
+            print(e)
             msg = 'email or password incorrect'
 
     return render(request,'common/customerlogin.html',{'message':msg})
@@ -100,4 +102,22 @@ def sellerregistration(request):
 
 
     return render(request,'common/sellerregist.html',{'message':msg})
+
+
+def check_email(request):
+    email = request.POST['email']
+    print(email)
+    email_exist = Seller.objects.filter(email = email).exists()
+    if not email_exist:
+        status = False
+    
+    else:
+        status = True
+
+
+    return JsonResponse({'email_exist': status})
+         
+    
+
+
 
