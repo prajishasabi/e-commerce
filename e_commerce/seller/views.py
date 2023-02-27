@@ -2,6 +2,8 @@
 from django.shortcuts import render,redirect
 from common.models import Seller
 from  .models import Product
+from .decorators import auth_seller
+
 
 
 # Create your views here.
@@ -14,12 +16,14 @@ def home(request):
     print(seller_pic)
     return render(request,'seller/seller_home.html',{'name':seller_name,'pic': seller_pic})
 
+@auth_seller
 
 def catalog(request):
     products = Product.objects.filter(seller = request.session['seller'])
 
     return render(request,'seller/product_catalog.html',{'products':products})
 
+@auth_seller
 
 def add_product(request):
     msg  = ''
@@ -48,7 +52,7 @@ def add_product(request):
 
     return render(request,'seller/add_products.html',{'message':msg})
 
-
+@auth_seller
 def change_password(request):
     error_msg = ''
     success_msg = '' 

@@ -1,0 +1,69 @@
+INFO 2023-02-24 12:26:23,275 autoreload Watching for file changes with StatReloader
+INFO 2023-02-24 13:27:36,703 autoreload Watching for file changes with StatReloader
+WARNING 2023-02-24 13:28:21,315 log Method Not Allowed: /student/add_student
+WARNING 2023-02-24 13:28:21,316 basehttp "GET /student/add_student HTTP/1.1" 405 5639
+INFO 2023-02-24 13:28:21,332 basehttp "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2023-02-24 13:28:21,333 basehttp "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 304 0
+INFO 2023-02-24 13:28:21,333 basehttp "GET /static/rest_framework/css/prettify.css HTTP/1.1" 304 0
+INFO 2023-02-24 13:28:21,334 basehttp "GET /static/rest_framework/css/default.css HTTP/1.1" 304 0
+INFO 2023-02-24 13:28:21,337 basehttp "GET /static/rest_framework/js/csrf.js HTTP/1.1" 304 0
+INFO 2023-02-24 13:28:21,337 basehttp "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2023-02-24 13:28:21,338 basehttp "GET /static/rest_framework/js/default.js HTTP/1.1" 304 0
+INFO 2023-02-24 13:28:21,339 basehttp "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 304 0
+INFO 2023-02-24 13:28:21,339 basehttp "GET /static/rest_framework/js/jquery-3.5.1.min.js HTTP/1.1" 304 0
+INFO 2023-02-24 13:28:21,340 basehttp "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 304 0
+INFO 2023-02-24 13:28:21,361 basehttp "GET /static/rest_framework/img/grid.png HTTP/1.1" 304 0
+WARNING 2023-02-24 13:28:21,418 log Not Found: /favicon.ico
+WARNING 2023-02-24 13:28:21,418 basehttp "GET /favicon.ico HTTP/1.1" 404 3739
+INFO 2023-02-24 13:29:35,553 basehttp - Broken pipe from ('127.0.0.1', 62289)
+INFO 2023-02-24 13:29:51,981 basehttp "GET /student/view_student HTTP/1.1" 200 5952
+INFO 2023-02-27 11:28:07,136 autoreload Watching for file changes with StatReloader
+INFO 2023-02-27 11:28:21,169 basehttp "GET / HTTP/1.1" 200 1582
+INFO 2023-02-27 11:28:21,196 basehttp "GET /static/images/best.jpg HTTP/1.1" 304 0
+WARNING 2023-02-27 11:28:21,361 log Not Found: /favicon.ico
+WARNING 2023-02-27 11:28:21,361 basehttp "GET /favicon.ico HTTP/1.1" 404 3739
+INFO 2023-02-27 11:29:08,254 autoreload Watching for file changes with StatReloader
+INFO 2023-02-27 11:46:25,286 autoreload Watching for file changes with StatReloader
+INFO 2023-02-27 11:49:33,965 autoreload Watching for file changes with StatReloader
+INFO 2023-02-27 11:49:44,746 basehttp "GET /custlogin HTTP/1.1" 200 3124
+INFO 2023-02-27 11:49:55,838 basehttp "POST /custlogin HTTP/1.1" 302 0
+INFO 2023-02-27 11:49:55,929 basehttp "GET /customer/home HTTP/1.1" 200 6380
+INFO 2023-02-27 11:49:55,961 basehttp "GET /media/product/cat1.webp HTTP/1.1" 304 0
+INFO 2023-02-27 11:49:55,970 basehttp "GET /media/product/cat2.webp HTTP/1.1" 304 0
+INFO 2023-02-27 11:49:55,970 basehttp "GET /media/product/cat1_ZKpuION.webp HTTP/1.1" 304 0
+WARNING 2023-02-27 11:49:56,034 basehttp "GET /static/css/customer.css HTTP/1.1" 404 1807
+INFO 2023-02-27 11:50:03,402 basehttp "GET /customer/product/1 HTTP/1.1" 200 5722
+WARNING 2023-02-27 11:50:03,418 basehttp "GET /static/css/customer.css HTTP/1.1" 404 1807
+INFO 2023-02-27 11:50:05,238 basehttp "GET /customer/mycart HTTP/1.1" 200 7112
+WARNING 2023-02-27 11:50:05,256 basehttp "GET /static/css/customer.css HTTP/1.1" 404 1807
+INFO 2023-02-27 12:05:45,136 basehttp "GET /student/view_student HTTP/1.1" 200 5952
+INFO 2023-02-27 12:05:45,182 basehttp "GET /static/rest_framework/css/prettify.css HTTP/1.1" 304 0
+INFO 2023-02-27 12:05:45,182 basehttp "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2023-02-27 12:05:45,182 basehttp "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 304 0
+INFO 2023-02-27 12:05:45,186 basehttp "GET /static/rest_framework/css/default.css HTTP/1.1" 304 0
+INFO 2023-02-27 12:05:45,187 basehttp "GET /static/rest_framework/js/jquery-3.5.1.min.js HTTP/1.1" 304 0
+INFO 2023-02-27 12:05:45,190 basehttp "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 304 0
+INFO 2023-02-27 12:05:45,192 basehttp "GET /static/rest_framework/js/csrf.js HTTP/1.1" 304 0
+INFO 2023-02-27 12:05:45,196 basehttp "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2023-02-27 12:05:45,197 basehttp "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 304 0
+INFO 2023-02-27 12:05:45,201 basehttp "GET /static/rest_framework/js/default.js HTTP/1.1" 304 0
+INFO 2023-02-27 12:05:45,222 basehttp "GET /static/rest_framework/img/grid.png HTTP/1.1" 304 0
+WARNING 2023-02-27 12:05:50,056 log Method Not Allowed: /student/add_student
+WARNING 2023-02-27 12:05:50,057 basehttp "GET /student/add_student HTTP/1.1" 405 5639
+INFO 2023-02-27 12:10:05,273 basehttp - Broken pipe from ('127.0.0.1', 61315)
+INFO 2023-02-27 12:10:20,108 basehttp "GET /student/view_student HTTP/1.1" 200 6291
+INFO 2023-02-27 12:31:52,787 basehttp "GET /customer/mycart HTTP/1.1" 200 7112
+WARNING 2023-02-27 12:31:52,802 basehttp "GET /static/css/customer.css HTTP/1.1" 404 1807
+INFO 2023-02-27 12:32:38,000 basehttp "GET /customer/myorder HTTP/1.1" 200 5088
+WARNING 2023-02-27 12:32:38,016 basehttp "GET /static/css/customer.css HTTP/1.1" 404 1807
+INFO 2023-02-27 12:32:39,337 basehttp "GET /customer/myorder HTTP/1.1" 200 5088
+WARNING 2023-02-27 12:32:39,351 basehttp "GET /static/css/customer.css HTTP/1.1" 404 1807
+INFO 2023-02-27 12:32:58,643 basehttp "GET /customer/mycart HTTP/1.1" 200 7112
+WARNING 2023-02-27 12:32:58,659 basehttp "GET /static/css/customer.css HTTP/1.1" 404 1807
+INFO 2023-02-27 12:33:16,937 basehttp "GET /customer/myorder HTTP/1.1" 200 5088
+WARNING 2023-02-27 12:33:16,951 basehttp "GET /static/css/customer.css HTTP/1.1" 404 1807
+INFO 2023-02-27 12:33:23,636 basehttp "GET /customer/mycart HTTP/1.1" 200 7112
+WARNING 2023-02-27 12:33:23,651 basehttp "GET /static/css/customer.css HTTP/1.1" 404 1807
+INFO 2023-02-27 12:37:31,099 basehttp "GET /customer/cart/remove/5 HTTP/1.1" 302 0
+INFO 2023-02-27 12:37:31,253 basehttp "GET /customer/mycart HTTP/1.1" 200 6675
+WARNING 2023-02-27 12:37:31,267 basehttp "GET /static/css/customer.css HTTP/1.1" 404 1807

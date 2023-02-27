@@ -50,7 +50,7 @@
 
         <td>Grand Total</td>
         
-        <td> <span id ="grand_total"></td>
+        <td> <span id ="grand_total"></span></td>
       </tr>
     </tbody>
 
@@ -64,8 +64,10 @@
     items = document.getElementsByClassName('total')
     for(let i = 0; i<items.length;i++){
       grand_total = grand_total + Number(items[i].innerHTML)
+
     }
     console.log(grand_total)
+    document.getElementById('grand_total').innerHTML = grand_total
 
 
    }

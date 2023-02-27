@@ -24,7 +24,9 @@ urlpatterns = [
     path('',include('common.urls')),
     path('seller/',include('seller.urls')),
     path('siteadmin/',include('siteadmin.urls')),
-    path('customer/',include('customer.urls'))
+    path('customer/',include('customer.urls')),
+    path('student/',include('API.urls'))
+
 
 
 

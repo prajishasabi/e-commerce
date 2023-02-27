@@ -56,6 +56,9 @@ def change_password(request):
 
 
 
+
+@auth_customer
+
 def products(request,pid):
     error_msg = ''
     product = Product.objects.get(id = pid)
@@ -82,7 +85,7 @@ def products(request,pid):
 def profile(request):
     return render(request,'customer/profile.html')
 
-@auth_customer
+
 def logout(request):
     del request.session['customer']
     request.session.flush()
@@ -92,6 +95,7 @@ def remove_cart(request,c_id):
     cart_item = Cart.objects.get(id = c_id)
     cart_item.delete()
     return redirect ('customer:my_cart')
+
 
 
 

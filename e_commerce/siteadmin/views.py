@@ -3,11 +3,24 @@ from common.models import Seller
 from django.core.mail import send_mail
 from random import randint
 from django.conf import settings
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+
+
 # Create your views here.
 
 
 def home(request):
-    return render(request,'siteadmin/home.html')
+    sellers = Seller.objects.all().count()
+
+
+    return render(request,'siteadmin/home.html',{'seller_count':sellers})
+
+@api_view(['GET'])
+def index(request):
+    message = "You have created an API"
+    return Response(message)
+
 
 def approve_seller(request):
     sellers = Seller.objects.filter(status = 'pending') 
