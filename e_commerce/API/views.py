@@ -13,10 +13,10 @@ def add_student(request):
     serialized_data = StudentSerializer(data = params)
     if serialized_data.is_valid():
         serialized_data.save()
-        return Response({'status_code':201,'message':'Student details added successfully'})
+        return JsonResponse({'status_code':201,'message':'Student details added successfully'})
     else:
     
-        return Response({'status_code':402,'message':'Form error'})
+        return JsonResponse({'status_code':402,'message':'Form error'})
 @api_view(['GET'])    
 def view_student(request):
     students = Student.objects.all()
