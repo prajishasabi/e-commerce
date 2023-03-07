@@ -1,0 +1,47 @@
+{% extends 'customer/master.html' %}
+{% load static %}
+{% block header %}
+
+{% endblock%} 
+{{block.super}}
+
+{% block content%}
+
+
+
+<section>
+    <div class="row m-5">
+        <div class="col-6">
+            <h3 class="" style="color: brown;">Order Summary</h3>
+            <hr>
+            <p><b>Products :</b></p>
+            <p><b>Quantity :</b></p>
+            <p><b>Price :</b></p>
+            <br>
+            <p><b> Total Price :</b></p>
+
+
+        </div>
+        <div class="col-6">
+             <h3 class="" style="color: brown;">Shipping Address</h3>
+            <hr>
+            <p><b>Name :</b></p>
+            <p><b>Mobile :+91 </b></p>
+            <p><b>Email :</b></p>
+            <br>
+            <p><b>Address : </b></p>
+
+
+
+        
+        </div>
+    </div>
+
+    <div class="d-grid gap-2 col-4 ms-auto mb-5 me-5 mt-5">
+        <a href="" class="btn btn-warning" type="button">PAYMENT</a>
+        </div>
+    
+</section>
+
+
+{% endblock content%}

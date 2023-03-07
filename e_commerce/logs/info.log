@@ -85,3 +85,182 @@ INFO 2023-02-27 13:26:50,720 basehttp "POST /student/add_student HTTP/1.1" 200 6
 INFO 2023-02-27 13:28:51,665 basehttp "POST /student/add_student HTTP/1.1" 200 69
 INFO 2023-02-27 13:54:03,387 autoreload Watching for file changes with StatReloader
 INFO 2023-02-27 13:54:36,184 basehttp "POST /student/add_student HTTP/1.1" 200 69
+INFO 2023-02-27 14:10:43,059 autoreload Watching for file changes with StatReloader
+INFO 2023-02-27 14:11:28,453 basehttp "POST /student/add_student HTTP/1.1" 200 69
+INFO 2023-02-28 11:11:08,938 autoreload Watching for file changes with StatReloader
+INFO 2023-02-28 12:31:37,842 autoreload Watching for file changes with StatReloader
+WARNING 2023-02-28 12:31:43,298 log Not Found: /donor_registration
+WARNING 2023-02-28 12:31:43,298 basehttp "GET /donor_registration HTTP/1.1" 404 3760
+INFO 2023-02-28 12:32:11,189 basehttp "GET / HTTP/1.1" 200 1582
+INFO 2023-03-07 09:45:29,370 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 09:45:46,140 basehttp "GET / HTTP/1.1" 200 1582
+INFO 2023-03-07 09:45:46,163 basehttp "GET /static/images/best.jpg HTTP/1.1" 304 0
+WARNING 2023-03-07 09:45:46,321 log Not Found: /favicon.ico
+WARNING 2023-03-07 09:45:46,322 basehttp "GET /favicon.ico HTTP/1.1" 404 3739
+INFO 2023-03-07 09:50:58,348 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 09:51:46,100 basehttp "GET /sellerlogin HTTP/1.1" 200 3077
+INFO 2023-03-07 09:51:46,130 basehttp "GET /static/images/seller.jpg HTTP/1.1" 304 0
+INFO 2023-03-07 09:51:48,238 basehttp "GET /sellerregi HTTP/1.1" 200 8799
+ERROR 2023-03-07 09:51:52,869 log Internal Server Error: /sellerregi
+Traceback (most recent call last):
+  File "C:\Users\ACER\Desktop\e-commerce\ecommerce_env\Lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'gender'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ACER\Desktop\e-commerce\ecommerce_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ACER\Desktop\e-commerce\ecommerce_env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ACER\Desktop\e-commerce\e_commerce\common\views.py", line 81, in sellerregistration
+    gender = request.POST['gender']
+             ~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ACER\Desktop\e-commerce\ecommerce_env\Lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'gender'
+ERROR 2023-03-07 09:51:52,881 basehttp "POST /sellerregi HTTP/1.1" 500 76499
+INFO 2023-03-07 09:51:59,604 basehttp "GET / HTTP/1.1" 200 1582
+ERROR 2023-03-07 09:52:24,090 log Internal Server Error: /customer/order_details
+Traceback (most recent call last):
+  File "C:\Users\ACER\Desktop\e-commerce\ecommerce_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ACER\Desktop\e-commerce\ecommerce_env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\views.py", line 89, in order_details
+    return render(request,'customer/order_deatils.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ACER\Desktop\e-commerce\ecommerce_env\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ACER\Desktop\e-commerce\ecommerce_env\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ACER\Desktop\e-commerce\ecommerce_env\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: customer/order_deatils.html
+ERROR 2023-03-07 09:52:24,090 basehttp "GET /customer/order_details HTTP/1.1" 500 80736
+INFO 2023-03-07 09:52:45,339 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\views.py changed, reloading.
+INFO 2023-03-07 09:52:45,951 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 09:52:50,470 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\views.py changed, reloading.
+INFO 2023-03-07 09:52:51,023 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 09:52:53,701 basehttp "GET /customer/order_details HTTP/1.1" 200 5374
+WARNING 2023-03-07 09:52:53,723 basehttp "GET /static/css/customer.css HTTP/1.1" 404 1807
+INFO 2023-03-07 09:56:04,279 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\urls.py changed, reloading.
+INFO 2023-03-07 09:56:04,893 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 09:56:09,426 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\urls.py changed, reloading.
+INFO 2023-03-07 09:56:09,955 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 09:56:11,346 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\urls.py changed, reloading.
+INFO 2023-03-07 09:56:11,894 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 09:56:19,521 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\urls.py changed, reloading.
+INFO 2023-03-07 09:56:20,080 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 09:56:26,645 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\urls.py changed, reloading.
+INFO 2023-03-07 09:56:27,141 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 09:56:37,975 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\urls.py changed, reloading.
+INFO 2023-03-07 09:56:38,494 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 09:56:39,744 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\urls.py changed, reloading.
+INFO 2023-03-07 09:56:40,196 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 09:56:44,542 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\urls.py changed, reloading.
+INFO 2023-03-07 09:56:45,009 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 09:57:02,190 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\views.py changed, reloading.
+INFO 2023-03-07 09:57:02,699 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 09:57:04,983 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\views.py changed, reloading.
+INFO 2023-03-07 09:57:05,449 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 09:57:10,879 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\views.py changed, reloading.
+INFO 2023-03-07 09:57:11,413 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 09:57:21,206 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\views.py changed, reloading.
+INFO 2023-03-07 09:57:21,761 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 10:00:05,878 basehttp "GET /customer/mycart HTTP/1.1" 302 0
+INFO 2023-03-07 10:00:05,902 basehttp "GET / HTTP/1.1" 200 1582
+INFO 2023-03-07 10:00:19,247 basehttp "GET /customer/mycart HTTP/1.1" 302 0
+INFO 2023-03-07 10:00:19,249 basehttp "GET / HTTP/1.1" 200 1582
+INFO 2023-03-07 10:00:27,337 basehttp "GET /custlogin HTTP/1.1" 200 3124
+INFO 2023-03-07 10:00:37,838 basehttp "POST /custlogin HTTP/1.1" 302 0
+INFO 2023-03-07 10:00:37,913 basehttp "GET /customer/home HTTP/1.1" 200 6380
+WARNING 2023-03-07 10:00:37,941 basehttp "GET /static/css/customer.css HTTP/1.1" 404 1807
+INFO 2023-03-07 10:00:37,948 basehttp "GET /media/product/cat1.webp HTTP/1.1" 304 0
+INFO 2023-03-07 10:00:37,950 basehttp "GET /media/product/cat2.webp HTTP/1.1" 304 0
+INFO 2023-03-07 10:00:37,950 basehttp "GET /media/product/cat1_ZKpuION.webp HTTP/1.1" 304 0
+INFO 2023-03-07 10:00:41,008 basehttp "GET /customer/mycart HTTP/1.1" 200 6721
+WARNING 2023-03-07 10:00:41,028 basehttp "GET /static/css/customer.css HTTP/1.1" 404 1807
+INFO 2023-03-07 10:01:18,468 basehttp "GET /customer/mycart HTTP/1.1" 200 6713
+WARNING 2023-03-07 10:01:18,485 basehttp "GET /static/css/customer.css HTTP/1.1" 404 1807
+INFO 2023-03-07 10:02:20,505 basehttp "GET /customer/mycart HTTP/1.1" 200 6748
+WARNING 2023-03-07 10:02:20,523 basehttp "GET /static/css/customer.css HTTP/1.1" 404 1807
+INFO 2023-03-07 10:02:43,622 basehttp "GET /customer/mycart HTTP/1.1" 200 6753
+WARNING 2023-03-07 10:02:43,641 basehttp "GET /static/css/customer.css HTTP/1.1" 404 1807
+INFO 2023-03-07 10:55:19,241 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 10:55:26,741 basehttp "GET /customer/payment HTTP/1.1" 200 6982
+WARNING 2023-03-07 10:55:26,842 basehttp "GET /static/css/customer.css HTTP/1.1" 404 1807
+WARNING 2023-03-07 10:55:26,857 basehttp "GET /static/image/razorpay.png HTTP/1.1" 404 1813
+INFO 2023-03-07 11:01:40,162 basehttp "GET /customer/payment HTTP/1.1" 200 6911
+WARNING 2023-03-07 11:01:40,182 basehttp "GET /static/css/customer.css HTTP/1.1" 404 1807
+WARNING 2023-03-07 11:01:40,194 basehttp "GET /static/image/razorpay.png HTTP/1.1" 404 1813
+INFO 2023-03-07 11:02:21,968 basehttp "GET /customer/payment HTTP/1.1" 200 6912
+WARNING 2023-03-07 11:02:21,989 basehttp "GET /static/css/customer.css HTTP/1.1" 404 1807
+INFO 2023-03-07 11:02:22,048 basehttp "GET /static/images/razorpay.png HTTP/1.1" 200 3949
+INFO 2023-03-07 11:03:04,639 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\models.py changed, reloading.
+INFO 2023-03-07 11:03:05,228 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 11:03:55,178 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\models.py changed, reloading.
+INFO 2023-03-07 11:03:55,812 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 11:03:57,277 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\models.py changed, reloading.
+INFO 2023-03-07 11:03:57,829 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 11:04:30,442 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\models.py changed, reloading.
+INFO 2023-03-07 11:04:30,984 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 11:04:33,231 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\models.py changed, reloading.
+INFO 2023-03-07 11:04:33,730 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 11:04:37,227 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\models.py changed, reloading.
+INFO 2023-03-07 11:04:37,733 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 11:04:40,182 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\models.py changed, reloading.
+INFO 2023-03-07 11:04:40,689 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 11:04:42,138 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\models.py changed, reloading.
+INFO 2023-03-07 11:04:42,671 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 11:05:06,586 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\models.py changed, reloading.
+INFO 2023-03-07 11:05:07,138 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 11:05:12,453 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\models.py changed, reloading.
+INFO 2023-03-07 11:05:12,927 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 11:05:15,273 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\models.py changed, reloading.
+INFO 2023-03-07 11:05:15,747 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 11:05:17,997 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\models.py changed, reloading.
+INFO 2023-03-07 11:05:18,458 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 11:05:27,857 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\models.py changed, reloading.
+INFO 2023-03-07 11:05:28,425 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 11:05:29,634 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\models.py changed, reloading.
+INFO 2023-03-07 11:05:30,075 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 11:05:33,361 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\models.py changed, reloading.
+INFO 2023-03-07 11:05:33,824 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 11:05:36,080 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\models.py changed, reloading.
+INFO 2023-03-07 11:05:36,539 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 11:05:59,288 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\models.py changed, reloading.
+INFO 2023-03-07 11:05:59,830 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 11:06:01,071 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\models.py changed, reloading.
+INFO 2023-03-07 11:06:01,591 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 11:06:09,969 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\models.py changed, reloading.
+INFO 2023-03-07 11:06:10,443 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 11:06:11,669 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\models.py changed, reloading.
+INFO 2023-03-07 11:06:12,157 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 11:06:15,481 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\models.py changed, reloading.
+INFO 2023-03-07 11:06:15,997 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 11:08:10,368 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\models.py changed, reloading.
+INFO 2023-03-07 11:08:10,902 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 11:08:14,258 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\models.py changed, reloading.
+INFO 2023-03-07 11:08:14,727 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 11:08:17,989 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\models.py changed, reloading.
+INFO 2023-03-07 11:08:18,442 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 11:08:19,704 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\models.py changed, reloading.
+INFO 2023-03-07 11:08:20,099 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 11:08:22,356 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\models.py changed, reloading.
+INFO 2023-03-07 11:08:22,815 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 11:08:28,115 autoreload C:\Users\ACER\Desktop\e-commerce\e_commerce\customer\models.py changed, reloading.
+INFO 2023-03-07 11:08:28,599 autoreload Watching for file changes with StatReloader
+INFO 2023-03-07 11:15:42,071 autoreload Watching for file changes with StatReloader
+WARNING 2023-03-07 13:14:13,783 basehttp "GET /static/css/customer.css HTTP/1.1" 404 1807
+INFO 2023-03-07 13:14:19,994 basehttp "GET /customer/payment HTTP/1.1" 200 6912
+WARNING 2023-03-07 13:14:20,016 basehttp "GET /static/css/customer.css HTTP/1.1" 404 1807
+INFO 2023-03-07 13:14:20,255 basehttp "GET /static/images/razorpay.png HTTP/1.1" 200 3949

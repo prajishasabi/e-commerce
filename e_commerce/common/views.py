@@ -68,7 +68,8 @@ def sellerlogin(request):
         except Exception as e:
             msg = 'username or password incorrect'
 
-    return render(request,'common/sellerlogin.html',{'message':msg})
+    return render(request,'common/sellerlogin.html',{'message':
+                                                     msg})
 
 def sellerregistration(request):
     msg = ''

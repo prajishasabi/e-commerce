@@ -85,6 +85,11 @@ def products(request,pid):
 def profile(request):
     return render(request,'customer/profile.html')
 
+def order_details(request):
+    return render(request,'customer/order_details.html')
+
+def payment(request):
+    return render(request,'customer/payment.html')
 
 def logout(request):
     del request.session['customer']

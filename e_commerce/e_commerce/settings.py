@@ -185,3 +185,10 @@ LOGGING = {
         }
     }
 }
+
+RAZORPAY_KEY_ID ='rzp_test_x2l3MzPU1A8RCi'
+RAZORPAY_KEY_SECRET = '6dOTL5ImEslzPUonDKMrFpSj'
+
+
+
+
